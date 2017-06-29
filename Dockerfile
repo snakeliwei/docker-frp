@@ -1,15 +1,15 @@
-FROM debian:8
+FROM alpine:3.6
 MAINTAINER Lyndon <snakeliwei@gmail.com>
-ENV FRP_VERSION 0.9.3
+ENV FRP_VERSION 0.12.0
 
-RUN mkdir -p /temp
+RUN mkdir -p /temp \
+    && mkdir -p /frp
 
 ADD https://github.com/fatedier/frp/releases/download/v$FRP_VERSION/frp_$FRP_VERSION_linux_amd64.tar.gz /temp/
 
-RUN tar xvzf /temp/frp_0.9.3_linux_amd64.tar.gz -C / \
-    && mv /frp_0.9.3_linux_amd64 /frp \ 
+RUN tar xvzf /temp/frp_$FRP_VERSION_linux_amd64.tar.gz \
+    && cp /temp/frp_$FRP_VERSION_linux_amd64/frps /frp \ 
     && chmod +x /frp/frps \
-    && chmod +x /frp/frpc \
     && rm -rf /temp 
 
 WORKDIR /frp
