@@ -7,7 +7,7 @@ RUN mkdir -p /temp \
 
 ADD https://github.com/fatedier/frp/releases/download/v0.12.0/frp_0.12.0_linux_amd64.tar.gz /temp/
 
-RUN tar xvzf /temp/frp_0.12.0_linux_amd64.tar.gz \
+RUN tar xvzf /temp/frp_0.12.0_linux_amd64.tar.gz -C /temp \
     && cp /temp/frp_0.12.0_linux_amd64/frps /frp \ 
     && chmod +x /frp/frps \
     && rm -rf /temp 
