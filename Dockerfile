@@ -6,10 +6,10 @@ RUN addgroup -S frp && adduser -S -G frp frp && \
     mkdir -p /temp && \
     mkdir -p /frp
 
-ADD https://github.com/fatedier/frp/releases/download/v$FRP_VERSION/frp_$FRP_VERSION_linux_amd64.tar.gz /temp/
+ADD https://github.com/fatedier/frp/releases/download/v0.13.0/frp_0.13.0_linux_amd64.tar.gz /temp/
 
-RUN tar xvzf /temp/frp_$FRP_VERSION_linux_amd64.tar.gz -C /temp \
-    && cp /temp/frp_$FRP_VERSION_linux_amd64/frps /frp \ 
+RUN tar xvzf /temp/frp_0.13.0_linux_amd64.tar.gz -C /temp \
+    && cp /temp/frp_0.13.0_linux_amd64/frps /frp \ 
     && chmod +x /frp/frps \
     && rm -rf /temp 
 
