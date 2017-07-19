@@ -17,4 +17,4 @@ WORKDIR /frp
 
 EXPOSE 80 443 6000 7000 7500
 
-ENTRYPOINT ["su-exec frp /frps"]
+ENTRYPOINT ["su-exec", "frp", "/frps"]
