@@ -4,7 +4,7 @@ ENV FRP_VERSION 0.14.0
 RUN mkdir -p /temp && \
     mkdir -p /frp 
 
-ADD https://github.com/fatedier/frp/releases/download/v$FRP_VERSION/frp_$FRP_VERSION_linux_amd64.tar.gz /temp/
+ADD "https://github.com/fatedier/frp/releases/download/v$FRP_VERSION/frp_$FRP_VERSION_linux_amd64.tar.gz" /temp/
 RUN tar xvzf /temp/frp_$FRP_VERSION_linux_amd64.tar.gz -C /temp  && \
     cp /temp/frp_$FRP_VERSION_linux_amd64/frps /frp  && \ 
     chmod +x /frp/frps  && \ 
