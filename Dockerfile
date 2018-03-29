@@ -1,5 +1,5 @@
 FROM alpine
-MAINTAINER Lyndon <snakeliwei@gmail.com>
+LABEL author = "snakeliwei@gmail.com"
 ENV FRP_VERSION 0.16.1
 RUN mkdir -p /temp && \
     mkdir -p /frp && \
