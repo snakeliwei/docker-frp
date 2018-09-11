@@ -1,6 +1,7 @@
-FROM alpine:3.7
-LABEL author = "snakeliwei@gmail.com"
-ENV FRP_VERSION 0.20.0
+FROM alpine:3.8
+LABEL author="snakeliwei@gmail.com"
+
+ENV FRP_VERSION 0.21.0
 RUN mkdir -p /temp && \
     mkdir -p /frp && \
     apk --no-cache add curl && \
